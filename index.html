@@ -1,204 +1,339 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<title>회계·세무·감사·내부통제 최근 뉴스 상세 요약</title>
-<style>
-  body { font-family: Arial, sans-serif; line-height:1.6; max-width: 900px; margin: auto; padding: 20px; }
-  h2 { font-size: 20px; cursor: pointer; background: #f5f5f5; padding: 10px; border-radius: 5px; }
-  div.content { display: none; padding: 12px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 12px; background: #fafafa; }
-  a { color: #0645ad; text-decoration: none; }
-</style>
-<script>
-function toggleContent(id) {
-  var el = document.getElementById(id);
-  el.style.display = (el.style.display === "block") ? "none" : "block";
-}
-</script>
+    <meta charset="UTF-8">
+    <title>Byweekly<br>Finance<br>Briefing</title>
+    <style>
+        body {
+            background: #F5EBE1;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 40px;
+            color: #1E1928;
+        }
+        img.header-logo {
+            width: 320px;
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .tab {
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        .tab button {
+            background-color: #ffffff;
+            float: left;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            outline: none;
+            cursor: pointer;
+            padding: 16px 32px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #555055;
+            transition: 0.3s;
+            min-width: 180px;
+        }
+        .tab button:hover {
+            background-color: #F5EBE1;
+        }
+        .tab button.active {
+            background-color: #F54B1E;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .accordion {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            padding: 14px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.05em;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion:hover {
+            background-color: #f1f1f1;
+        }
+        .brief {
+            font-size: 0.95em;
+            color: #555055;
+            margin: 4px 0 8px 0;
+            padding-left: 10px;
+        }
+        .panel {
+            padding: 0 18px 8px 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            border-left: 3px solid #F54B1E;
+            margin-bottom: 10px;
+        }
+        a {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-<h1>최근 회계·세무·감사·내부통제 뉴스 상세 요약</h1>
 
-<h2 onclick="toggleContent('c1')">1. 금감원, 은행권 AI 시대 내부통제 워크숍 개최</h2>
-<div class="content" id="c1">
-  금융감독원은 최근 국내 주요 은행 감사, 내부통제 책임자를 소집해 내부통제 강화 워크숍을 진행.<br>
-  자금부정 사고가 지속 발생하고 있는데, 주요 원인으로 “경영진이 내부통제를 단순 규제 대응으로만 인식해 소극적”이라는 점을 지적.<br>
-  특히 AI, 디지털 전환이 급속히 진행되며 금융사 리스크 지형이 바뀌는데, 내부통제는 여전히 과거 방식에 머물러 있는 점을 경고.<br>
-  금감원은 앞으로 자금부정 통제 운영실태를 의무적으로 공시하는 방안을 추진 중.<br>
-  이를 통해 시장과 주주의 감시를 받게 해 경영진의 책임성을 높이겠다는 계획.<br>
-  ➔ “AI 시대에 맞는 통제 인프라와 경영진 인식 전환이 없다면 사고는 계속될 것”이라는 메시지를 강조.<br>
-  <a href="https://news.nate.com/search?q=%EB%82%B4%EB%B6%80%ED%9A%8C%EA%B3%84" target="_blank">출처 보기</a>
-</div>
 
-<h2 onclick="toggleContent('c2')">2. 상장사 감사보고서, 내부 감사와 외부 감사 의견 불일치 심화</h2>
-<div class="content" id="c2">
-  머니투데이 보도에 따르면 2024 회계연도 상장사 감사보고서를 분석한 결과,<br>
-  내부 감사(즉 자체 감사위원회 평가)는 약 88%가 '적정' 판정을 내렸지만,<br>
-  외부 감사(회계법인 감사)에서는 상당수 회사가 '한정', '의견거절', 심지어 '부적정' 의견을 받음.<br>
-  감사보고서에 따르면 이런 괴리는 주로 내부회계관리제도가 유명무실했거나 경영진의 관심 부족, 전문성 결여가 원인이었다고 지적.<br>
-  내부 감사는 “문제가 없다”고 하고 외부 감사는 “중대한 문제가 있다”고 한 셈.<br>
-  ➔ 향후 주주총회나 금융당국이 이 간극을 문제 삼아 감사위원회 책임을 물을 가능성이 큼.<br>
-  <a href="https://news.mt.co.kr/mtview.php?no=2025061609133626481&utm_source=chatgpt.com" target="_blank">출처 보기</a>
+    
+    
+<div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+    <div style="flex-grow: 1;">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEwMCIgaGVpZ2h0PSIyNTMiIHZpZXdCb3g9IjAgMCAxMTAwIDI1MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMDUyLjYzIDE2OS41N0MxMDU4Ljc3IDE2Ny4wMjMgMTA2My41OCAxNjMuMjc0IDEwNjcuMDUgMTU4LjMzQzEwNzAuNSAxNTMuMzkzIDEwNzIuMjMgMTQ3LjM1IDEwNzIuMjMgMTQwLjIwMVYxMzguOTI0QzEwNzIuMjMgMTM2Ljg4MiAxMDcxLjU5IDEzNS4zMDUgMTA3MC4yOCAxMzQuMjA2QzEwNjguOTggMTMzLjA5MyAxMDY3LjA1IDEzMi43MTcgMTA2NC40NCAxMzMuMDUyTDEwMzMuMyAxMzcuMTQyQzEwMjUuNTEgMTM4LjE2NiAxMDE5LjM3IDE0MC4yMTUgMTAxNC44NyAxNDMuMjc0QzEwMTAuMzYgMTQ2LjMzMyAxMDA4LjEyIDE1MC43NjQgMTAwOC4xMiAxNTYuNTU1QzEwMDguMTIgMTYyLjAwNCAxMDEwLjE1IDE2Ni4xNjkgMTAxNC4yMSAxNjkuMDcxQzEwMTguMjggMTcxLjk2NiAxMDI0LjIgMTczLjQwNyAxMDMyIDE3My40MDdDMTAzOS44IDE3My40MDcgMTA0Ni40OSAxNzIuMTMgMTA1Mi42MyAxNjkuNTgzVjE2OS41N1pNOTkzLjIwNCAxODQuODg2Qzk4NC42MzIgMTc4LjA3OCA5ODAuMzU1IDE2OS4wNTEgOTgwLjM1NSAxNTcuODI1Qzk4MC4zNTUgMTQ2LjU5MiA5ODQuNzY4IDEzNy4xNzYgOTkzLjYwMSAxMzAuMTE1QzEwMDIuNDIgMTIzLjA1NSAxMDE0LjE4IDExOC41ODIgMTAyOC45IDExNi43MDRMMTA2NS40OSAxMTIuNjE0QzEwNjcuOTEgMTEyLjI3MyAxMDY5LjY4IDExMS41NTYgMTA3MC44MiAxMTAuNDVDMTA3MS45NCAxMDkuMzM3IDEwNzIuNTEgMTA3LjkzNyAxMDcyLjUxIDEwNi4yMzdDMTA3Mi41MSAxMDEuNjM0IDEwNzEuNDcgOTcuNzY5MyAxMDY5LjM4IDk0LjYyMTRDMTA2Ny4zMSA5MS40NjY3IDEwNjQuNCA4OS4wMDE3IDEwNjAuNjkgODcuMjA1OEMxMDU2Ljk2IDg1LjQxNjggMTA1Mi42NyA4NC41MjkxIDEwNDcuODQgODQuNTI5MUgxMDM1LjM5QzEwMjguMTIgODQuNTI5MSAxMDIyLjA2IDg2LjQwNjkgMTAxNy4yMiA5MC4xNDg5QzEwMTIuMzcgOTMuODk3NiAxMDA5Ljc3IDk5LjE3NiAxMDA5LjQzIDEwNS45ODRIOTgxLjE0MUM5ODEuNjYgOTcuMTQxMSA5ODQuNDIgODkuMzkwOSA5ODkuNDQxIDgyLjc0NjlDOTk0LjQ2MSA3Ni4xMDk3IDEwMDEuMDMgNzEuMDQzMSAxMDA5LjE3IDY3LjU1MzhDMTAxNy4zIDY0LjA2NDUgMTAyNi4xMyA2Mi4zMDk2IDEwMzUuNjMgNjIuMzA5NkgxMDQ3LjgzQzEwNTcuODYgNjIuMzA5NiAxMDY2Ljc3IDY0LjI2OTMgMTA3NC41NiA2OC4xODJDMTA4Mi4zNSA3Mi4xMDE1IDEwODguNTQgNzcuNTkxNSAxMDkzLjExIDg0LjY1ODhDMTA5Ny43IDkxLjcyNjIgMTEwMCA5OS45NDc2IDExMDAgMTA5LjMwOUwxMDk5Ljk0IDE5My4wOEgxMDc3LjM5TDEwNzcuNDEgMTgyLjc1NUMxMDc3LjQxIDE4MS43NzkgMTA3Ny4xNiAxODAuNzg5IDEwNzYuNTggMTc5Ljk5N0MxMDc1LjkzIDE3OS4xMjkgMTA3NS4wNyAxNzguNjM4IDEwNzQuMDQgMTc4LjUyMkMxMDcyLjQ4IDE3OC4zNTEgMTA3MC44NCAxNzkuMTIzIDEwNjkuMSAxODAuODE2QzEwNjQuNzggMTg0LjkwNiAxMDU4Ljk5IDE4OC4zMDcgMTA1MS43MyAxOTEuMDM4QzEwNDQuNDYgMTkzLjc1NiAxMDM2LjU5IDE5NS4xMjggMTAyOC4xIDE5NS4xMjhDMTAxMy40IDE5NS4xMjggMTAwMS43NiAxOTEuNzI4IDk5My4yMDQgMTg0LjkwNlYxODQuODg2WiIgZmlsbD0iI0Y1NEIxRSIvPg0KPHBhdGggZD0iTTg4MS43NjQgMTQuMjk0OUg5MDkuMDE5VjE5My4wNjlIODgxLjc2NFYxNC4yOTQ5WiIgZmlsbD0iI0Y1NEIxRSIvPg0KPHBhdGggZD0iTTk2Mi43MjcgNDEuMTFIOTMyLjYxNlYxNC4yOTQ5SDk2Mi43MjdWNDEuMTFaTTk2MS40MzYgNjQuMzYwNlYyMDguOTFDOTYxLjQzNiAyMjAuODMzIDk1OC41ODEgMjI5Ljg0NiA5NTIuODcgMjM1Ljk5MkM5NDcuMTYgMjQyLjExNyA5MzkuMDMxIDI0NS4xNzYgOTI4LjQ3IDI0NS4xNzZIOTA0Ljg1NVYyMjIuNDUxSDkyMC4xN0M5MjUuMDE0IDIyMi40NTEgOTI4LjUxMSAyMjEuMDkyIDkzMC42NzYgMjE4LjM2MUM5MzIuODQyIDIxNS42MyA5MzMuOTE0IDIxMS40NjQgOTMzLjkxNCAyMDUuODQ1VjY0LjM2MDZIOTYxLjQzNloiIGZpbGw9IiNGNTRCMUUiLz4NCjxwYXRoIGQ9Ik04MTcuNzQ3IDE2Ni4yNkM4MjMuMDIgMTYyLjUxOCA4MjcuMTczIDE1Ny4zNjMgODMwLjIwNiAxNTAuODE0QzgzMy4yMzIgMTQ0LjI2NiA4MzQuNzQ5IDEzNi44OTEgODM0Ljc0OSAxMjguNzI0QzgzNC43NDkgMTIwLjU1OCA4MzMuMjMyIDExMy4yMzggODMwLjIwNiAxMDYuNzU3QzgyNy4xNzMgMTAwLjI5MSA4MjMuMDIgOTUuMTM1NSA4MTcuNzQ3IDkxLjMxMTZDODEyLjQ2NiA4Ny40ODA5IDgwNi42MzMgODUuNTYyMSA4MDAuMjI1IDg1LjU2MjFINzkwLjEwOUM3ODMuNzA4IDg1LjU2MjEgNzc3Ljg2MSA4Ny40Mzk5IDc3Mi41ODcgOTEuMTgxOUM3NjcuMzA3IDk0LjkzMDcgNzYzLjE2MSAxMDAuMDM4IDc2MC4xMzQgMTA2LjUwNUM3NTcuMTAxIDExMi45NzggNzU1LjU5MiAxMjAuMzg3IDc1NS41OTIgMTI4LjcyNEM3NTUuNTkyIDEzNy4wNjIgNzU3LjEwMSAxNDQuNDcxIDc2MC4xMzQgMTUwLjk0NEM3NjMuMTYxIDE1Ny40MSA3NjcuMzA3IDE2Mi41MTggNzcyLjU4NyAxNjYuMjc0Qzc3Ny44NjEgMTcwLjAyMiA3ODMuNzA4IDE3MS44OTMgNzkwLjEwOSAxNzEuODkzSDgwMC4yMjVDODA2LjYzMyAxNzEuODkzIDgxMi40NjYgMTcwLjAyMiA4MTcuNzQ3IDE2Ni4yNzRWMTY2LjI2Wk03NTguMTgxIDE4Ni41NjFDNzQ4LjY1OCAxODAuODU5IDc0MS4xNzkgMTcyLjkzOCA3MzUuNzM0IDE2Mi44MTJDNzMwLjI4MyAxNTIuNjg1IDcyNy41NTEgMTQxLjMxNiA3MjcuNTUxIDEyOC43MTdDNzI3LjU1MSAxMTYuMTE5IDczMC4yNzYgMTA0Ljc1IDczNS43MzQgOTQuNjE2NkM3NDEuMTc5IDg0LjQ5MDEgNzQ4LjY3MiA3Ni41NjkyIDc1OC4xODEgNzAuODc0M0M3NjcuNjg5IDY1LjE3MjYgNzc4LjI1IDYyLjMxMTUgNzg5Ljg0MiA2Mi4zMTE1SDgwMC40ODVDODEyLjA3NyA2Mi4zMTE1IDgyMi42MjQgNjUuMTU5IDgzMi4xNDYgNzAuODc0M0M4NDEuNjU1IDc2LjU4MjggODQ5LjE0OSA4NC40OTAxIDg1NC41OTMgOTQuNjE2NkM4NjAuMDM3IDEwNC43NSA4NjIuNzc2IDExNi4xMTkgODYyLjc3NiAxMjguNzE3Qzg2Mi43NzYgMTQxLjMxNiA4NjAuMDkyIDE1Mi42ODUgODU0LjcyMyAxNjIuODEyQzg0OS4zNiAxNzIuOTM4IDg0MS44OCAxODAuODU5IDgzMi4yNzYgMTg2LjU2MUM4MjIuNjcyIDE5Mi4yNjkgODEyLjA3NyAxOTUuMTE3IDgwMC40ODUgMTk1LjExN0g3ODkuODQyQzc3OC4yNSAxOTUuMTE3IDc2Ny42ODkgMTkyLjI2OSA3NTguMTgxIDE4Ni41NjFaIiBmaWxsPSIjRjU0QjFFIi8+DQo8cGF0aCBkPSJNNjExLjkzMiA2NC4zNTIyVjcxLjUwMTVDNjExLjkzMiA3NC4yMzI5IDYxMi44MzQgNzUuOTc0MSA2MTQuNjU4IDc2LjczODlDNjE2LjQ3NSA3Ny41MTA1IDYxOC44NTIgNzYuNjk3OSA2MjEuNzg5IDc0LjMwOEM2MjUuNTg3IDcwLjcyOTkgNjMwLjA4OSA2Ny44NDE1IDYzNS4yOCA2NS42MjkxQzY0MC40NzkgNjMuNDIzNiA2NDUuOTIzIDYyLjMxMDUgNjUxLjYzNCA2Mi4zMTA1SDY2My44MjdDNjcyLjEyNyA2Mi4zMTA1IDY3OS44MzIgNjQuNDQxIDY4Ni45MjIgNjguNzAxOUM2OTQuMDIgNzIuOTYyOCA2OTkuNTk0IDc4LjgyODQgNzAzLjY1OCA4Ni4zMTkxQzcwNy43MjMgOTMuODE2NyA3MDkuNzU4IDEwMi4xNjEgNzA5Ljc1OCAxMTEuMzQ1VjE5My4wNjdINjgyLjUwM1YxMTYuMTkzQzY4Mi41MDMgMTEwLjU4IDY4MS40MTcgMTA1LjUyMSA2NzkuMjY1IDEwMUM2NzcuMSA5Ni40ODY2IDY3NC4wMzIgOTIuOTA4NSA2NzAuMDUgOTAuMjcyN0M2NjYuMDYxIDg3LjYzMDIgNjYxLjU3MyA4Ni4zMTIzIDY1Ni41NTIgODYuMzEyM0g2NDUuMzk3QzYzOC45OTYgODYuMzEyMyA2MzMuMjM4IDg4LjAxMjYgNjI4LjEyOCA5MS40MTk5QzYyMy4wMzMgOTQuODI3MyA2MTkuMDQzIDk5LjQ3MDYgNjE2LjE4OCAxMDUuMzM2QzYxMy4zMzMgMTExLjIxNSA2MTEuOTEyIDExNy40NjMgNjExLjkxMiAxMjQuMTA3VjE5My4wNkg1ODQuNjU2VjY0LjM1MjJINjExLjkzMloiIGZpbGw9IiNGNTRCMUUiLz4NCjxwYXRoIGQ9Ik01MTQuMTgzIDE2OS4zNTNDNTIwLjMxNyAxNjYuODA2IDUyNS4xMjYgMTYzLjA1NyA1MjguNTg5IDE1OC4xMTNDNTMyLjA0NiAxNTMuMTc2IDUzMy43ODEgMTQ3LjEzMyA1MzMuNzgxIDEzOS45ODRWMTM4LjcwN0M1MzMuNzgxIDEzNi42NjUgNTMzLjEzMiAxMzUuMDg4IDUzMS44MzQgMTMzLjk4OUM1MzAuNTI5IDEzMi44NzYgNTI4LjU4OSAxMzIuNSA1MjUuOTg2IDEzMi44MzVMNDk0Ljg0NCAxMzYuOTI1QzQ4Ny4wNjQgMTM3Ljk0OSA0ODAuOTE2IDEzOS45OTggNDc2LjQxNCAxNDMuMDU3QzQ3MS45MTMgMTQ2LjExNiA0NjkuNjY1IDE1MC41NDggNDY5LjY2NSAxNTYuMzM4QzQ2OS42NjUgMTYxLjc4NyA0NzEuNjk0IDE2NS45NTIgNDc1Ljc1OCAxNjguODU0QzQ3OS44MyAxNzEuNzUgNDg1Ljc1MiAxNzMuMTkgNDkzLjU0NiAxNzMuMTlDNTAxLjM0IDE3My4xOSA1MDguMDM1IDE3MS45MTQgNTE0LjE4MyAxNjkuMzY3VjE2OS4zNTNaTTQ1NC43NDYgMTg0LjY2OUM0NDYuMTggMTc3Ljg2MSA0NDEuOTA0IDE2OC44MzQgNDQxLjkwNCAxNTcuNjA4QzQ0MS45MDQgMTQ2LjM3NSA0NDYuMzEgMTM2Ljk1OSA0NTUuMTQzIDEyOS44OTlDNDYzLjk2MSAxMjIuODM4IDQ3NS43MzEgMTE4LjM2NSA0OTAuNDQ1IDExNi40ODhMNTI3LjAzOCAxMTIuMzk3QzUyOS40NTcgMTEyLjA1NiA1MzEuMjMzIDExMS4zMzkgNTMyLjM2IDExMC4yMzNDNTMzLjQ4NyAxMDkuMTIgNTM0LjA0NyAxMDcuNzIgNTM0LjA0NyAxMDYuMDJDNTM0LjA0NyAxMDEuNDE3IDUzMy4wMDkgOTcuNTUyNSA1MzAuOTI1IDk0LjQwNDZDNTI4Ljg1NSA5MS4yNDk5IDUyNS45NTIgODguNzg0OSA1MjIuMjI5IDg2Ljk4OUM1MTguNTEzIDg1LjIgNTE0LjIyNCA4NC4zMTIzIDUwOS4zODcgODQuMzEyM0g0OTYuOTI4QzQ4OS42NTkgODQuMzEyMyA0ODMuNjA3IDg2LjE5MDEgNDc4Ljc1NyA4OS45MzIxQzQ3My45MTQgOTMuNjgwOCA0NzEuMzE4IDk4Ljk1OTIgNDcwLjk3NyAxMDUuNzY3SDQ0Mi42ODNDNDQzLjIwMiA5Ni45MjQzIDQ0NS45NjkgODkuMTc0MSA0NTAuOTg5IDgyLjUzMDFDNDU2LjAxIDc1Ljg5MjkgNDYyLjU4MiA3MC44MjYzIDQ3MC43MSA2Ny4zMzdDNDc4LjgzOSA2My44NDc3IDQ4Ny42NzIgNjIuMDkyOCA0OTcuMTggNjIuMDkyOEg1MDkuMzc0QzUxOS40MDggNjIuMDkyOCA1MjguMzMgNjQuMDUyNSA1MzYuMTEgNjcuOTY1MkM1NDMuODk3IDcxLjg4NDcgNTUwLjA4NiA3Ny4zNzQ3IDU1NC42NjMgODQuNDQyQzU1OS4yNDYgOTEuNTA5NCA1NjEuNTQyIDk5LjczMDggNTYxLjU0MiAxMDkuMDkyTDU2MS40ODcgMTkyLjg2M0g1MzguOTM4TDUzOC45NTggMTgyLjUzOEM1MzguOTU4IDE4MS41NjIgNTM4LjcxMyAxODAuNTcyIDUzOC4xMjUgMTc5Ljc4QzUzNy40NzYgMTc4LjkxMyA1MzYuNjE1IDE3OC40MjEgNTM1LjU4NCAxNzguMzA1QzUzNC4wMjcgMTc4LjEzNCA1MzIuMzggMTc4LjkwNiA1MzAuNjUyIDE4MC41OTlDNTI2LjMyOCAxODQuNjg5IDUyMC41MzUgMTg4LjA5IDUxMy4yNjcgMTkwLjgyMUM1MDUuOTk5IDE5My41MzkgNDk4LjEzIDE5NC45MTIgNDg5LjY1MyAxOTQuOTEyQzQ3NC45MzkgMTk0LjkxMiA0NjMuMzA2IDE5MS41MTEgNDU0Ljc0NiAxODQuNjg5VjE4NC42NjlaIiBmaWxsPSIjRjU0QjFFIi8+DQo8cGF0aCBkPSJNMzUwLjQ3NCAyMTcuNzJDMzU0LjAxOSAyMTQuNTcyIDM1Ni41NzQgMjEwLjg1NyAzNTguMTM4IDIwNi42MUMzNTkuNjg5IDIwMi4zNDkgMzYwLjQ3NCAxOTguNTI1IDM2MC40NzQgMTk1LjEyNUMzNjAuNDc0IDE5Mi4yMjkgMzYwLjIzNSAxODkuNDQ0IDM1OS4xNyAxODYuNTYyQzM1MS4yMTIgMTY0LjkxNiAzMDkuMzM4IDY0LjM1NDUgMzA5LjMzOCA2NC4zNTQ1SDMzOC40MUMzMzguNDEgNjQuMzU0NSAzNzEuNjIzIDE0Ny4xNjkgMzcyLjQxNSAxNDkuMTQ5QzM3My4yMDcgMTUxLjEyOSAzNzQuNDc4IDE1Mi45OCAzNzYuMjg4IDE1Mi45OEMzNzguMDk4IDE1Mi45OCAzNzkuMzIxIDE1MS42OTYgMzgwLjE5NSAxNDkuMTQ5TDQxMi44OTUgNjQuMzU0NUg0NDEuNzAxTDM4MC45NjcgMjE0LjAxOUMzNzYuODE0IDIyNC43NDYgMzcxLjQwNCAyMzIuNjE5IDM2NC43NTEgMjM3LjY0NUMzNTguMDg0IDI0Mi42NjQgMzQ5LjgyNSAyNDUuMTc3IDMzOS45NjggMjQ1LjE3N0gzMjIuODM2VjIyMi40NTJIMzM3LjExM0MzNDIuNDc1IDIyMi40NTIgMzQ2LjkyOSAyMjAuODY4IDM1MC40NzQgMjE3LjczM1YyMTcuNzJaIiBmaWxsPSIjRjU0QjFFIi8+DQo8cGF0aCBkPSJNMjA2LjU1MiA1MS4xODUyQzIxNS42MTcgNTQuMTY5MiAyMjQuMTI4IDU3LjU4MzMgMjMxLjk2MyA2MS4zOTM2QzIzMy44NjIgNjIuMzE1NCAyMzQuNDkgNjAuODIgMjM0LjA2NyA1OS41NDMxQzIzMS4yMjUgNTAuOTM5MyAyMjcuODY0IDQyLjcwNDMgMjI0LjA0NiAzNC45MTMxQzIyMS4wNTQgMjguODIyMiAyMTYuMTM2IDIzLjkwNTggMjEwLjA0MiAyMC45MjE4QzIwMi4yNDggMTcuMDk3OSAxOTQuMDEgMTMuNzM4MyAxODUuNDAzIDEwLjg5NzdDMTg0LjEyNiAxMC40NzQ0IDE4Mi41ODkgMTAuOTkzMyAxODMuNTUyIDEzLjAwMDlDMTg3LjMzNiAyMC44NDY3IDE5MC43NzkgMjkuMzQxMiAxOTMuNzY0IDM4LjQwMjRDMTk1Ljc1OSA0NC40NTI0IDIwMC41IDQ5LjE5MTMgMjA2LjU1MiA1MS4xODUyWiIgZmlsbD0iI0Y1NEIxRSIvPg0KPHBhdGggZD0iTTEzNy41ODIgMjAzLjIzM0MxMjguMjAzIDIwMy43NDUgMTI1Ljk5NyAxOTguNDI2IDEyNi4xNTQgMTkyLjA5NkMxMjYuNDc1IDE3OS4zMTMgMTI2LjcgMTY1Ljc3OSAxMjYuODE2IDE1MS42OTlDMTI2Ljg3MSAxNDQuOTA1IDEyOS45MzggMTM5LjQzNSAxMzkuMTY3IDEzOS4zNTRDMTU0LjM4NiAxMzkuMjMxIDE2OC45NyAxMzguOTc4IDE4Mi42NTMgMTM4LjYxNkMxODcuMzExIDEzOC40OTMgMTkxLjE1NyAxNDAuNjcxIDE5MC44NyAxNDcuMDE1QzE5MC40MDYgMTU3LjM4NyAxODkuNTExIDE2Ny40ODYgMTg4LjI1NCAxNzcuMjI0QzE4Ny41MyAxODIuODY0IDE5MC4wNjQgMTg2Ljg5MyAxOTcuMDQ2IDE4NS41MTNDMjA5LjEyOSAxODMuMTM3IDIyMi4yODYgMTc5LjYxNCAyMzIuMjggMTc2LjE0NUMyMzcuNTE5IDE3NC4zMjIgMjQxLjMyNCAxNjkuNzYgMjQyLjE4NCAxNjQuMjg0QzI0NC4wMDEgMTUyLjgxMiAyNDQuOTU4IDE0MC44OTcgMjQ0Ljk1MSAxMjguNzIyQzI0NC45NTEgMTIzLjMyNyAyNDIuMTE2IDEyMS40MjkgMjM4LjI1IDEyMS4xODNDMjMwLjI0NCAxMjAuNjc4IDIyMS40MzkgMTIwLjIyIDIxMS45NzEgMTE5LjgyNEMyMDYuMzI5IDExOS41ODUgMjAxLjkyMyAxMTcuNTIzIDIwMS40ODYgMTA5LjQ1OUMyMDAuNTc3IDkyLjU3MjMgMTk4LjM3OCA3Ni40MzY4IDE5NS4xNjcgNjEuMzkzOUMxOTMuOTI0IDU1LjU3NjIgMTg5LjQxNSA1MS4wMzUzIDE4My41OTUgNDkuNzc4OUMxNjkuMTk2IDQ2LjY1ODMgMTUyLjE4IDQ0LjM1NzEgMTM2LjE2MSA0My40ODk5QzEzMC4xMTYgNDMuMTYyMiAxMjUuNDAyIDM5LjkzMjMgMTI1LjA1NCAzMi4yMzY4QzEyNC42NDQgMjMuMDUyNiAxMjQuMjA3IDE0LjQ5NjYgMTIzLjcyOSA2LjcwNTQ2QzEyMy41MTcgMy4zMTE3NiAxMjAuOTIxIDAgMTE2LjE4MSAwQzk4LjI0MjYgMCA4MC45Mzk4IDIuMDc1ODMgNjQuNjg5IDUuODk5NzJDNTguNDE4MiA3LjM4MTQ3IDUzLjI0NzEgMTEuNzU4NSA1MC43MjY1IDE3LjY4NTVDNDcuMTgxMiAyNi4wNDM0IDQ0LjAyNTMgMzUuMDg0MiA0MS4zMTM0IDQ0LjcwNTRDNDAuMDYzNCA0OS4xNTA3IDM2LjYwMDEgNTIuNjI2MyAzMi4xNTMxIDUzLjg3NTlDMjUuOTk4NSA1NS42MDM1IDIwLjA4MjkgNTcuNTIyMiAxNC40MjY4IDU5LjU5ODFDOS44ODQyNCA2MS4yNzEgNi40Njg3NiA2NS4xMDE3IDUuMjg3MDEgNjkuNzkyOEMzLjExNDc3IDc4LjQ1MTIgMS40NDgwMSA4Ni42MTggMC4wNTQ0OTk3IDk3Ljk3MzVDLTAuNDc4MzE1IDEwMi4zNzEgMi45ODQ5OCAxMDQuNTE1IDYuNTM3MDcgMTAzLjk2MkMxNC41NzAzIDEwMi43MTIgMjIuMzQzOSAxMDEuNzAyIDMxLjUzODQgMTAwLjcxOUMzNy42MTExIDEwMC4wNzcgNDIuNDQ3NCA5NS4yOSA0My4wNzU4IDg5LjIxMjdDNDMuNzM4NCA4Mi43NTk5IDQ0LjU2NSA3Ni40NTA1IDQ1LjU0MTggNzAuMzA1QzQ2LjUzOTEgNjQuMDI5NyA1MS40NTA2IDU5LjEwNjQgNTcuNzM1MSA1OC4xMDk1QzY5LjE3NjkgNTYuMyA4MS4xODU3IDU0Ljk2ODQgOTMuNjI0OSA1NC4yODU2QzEwMy43MDEgNTMuNzMyNSAxMDYuMzUxIDU5LjUxNjEgMTA2LjE4IDY2LjQ2MDZDMTA1Ljg3MyA3OC45ODM4IDEwNS42NjEgOTIuMjI0IDEwNS41NDUgMTA1Ljk3NkMxMDUuNDkgMTEyLjY0MSAxMDIuNTg3IDExOC4wMTUgOTMuNDIgMTE4LjA5Qzc1LjcxNDEgMTE4LjI0IDU4Ljg1NTMgMTE4LjU1NCA0My4yODA4IDExOS4wMTJDMzYuMDMzMSAxMTkuMjIzIDMwLjIzMzYgMTIyLjMwMyAzMC4zNDI5IDEzMi40M0MzMC41NDc5IDE1MS4wODUgMzIuMjg5OCAxNjguODQ1IDM1LjAwODUgMTg0LjYzOUMzNS44ODI4IDE4OS43MiAzNC40MjEgMTk0LjggMjYuMjMwNyAxOTIuNjlDMjAuNzM4NiAxOTEuMjE1IDE1LjQzNzggMTg5LjU5NyAxMC4zMTQ2IDE4Ny44NTVDNi41OTE3MiAxODYuNTg1IDUuNjgzMiAxODkuMjA3IDYuMzMyMTUgMTkxLjYxMUM5LjU0MjY5IDIwMy40NjUgMTMuNjM0NCAyMTQuNjc3IDE4LjQ5MTIgMjI1LjA3QzIwLjU0MDUgMjI5LjQ2MSAyNC4xNDczIDIzMi45NDMgMjguNjAxIDIzNC44NDhDMzYuNDA4OCAyMzguMTk0IDQ0LjYyNjUgMjQxLjA3NiA1My4xNzg4IDI0My41MTRDNTguOTY0NiAyNDUuMTU5IDU5LjQ1NjUgMjQxLjMwMSA1OC4yODg0IDIzOC4wODVDNTUuODI5MiAyMzEuMjkxIDUzLjU2ODIgMjI0LjA2NiA1MS42MDc3IDIxNi40NDZDNTAuNTg5OSAyMTIuNDcyIDUxLjM0MTMgMjA4LjIxOCA1OC4wNzY2IDIwOS40ODhDNzAuMjYzIDIxMS43ODkgODYuNTIwNyAyMTMuNTEgOTcuNTUyNyAyMTQuMDQyQzEwMy4yNyAyMTQuMzE1IDEwNi45NTIgMjE2LjEzOSAxMDcuMjI1IDIyMy4xNzlDMTA3LjUyNiAyMzAuNzc5IDEwNy44ODggMjM3Ljk0OCAxMDguMjcgMjQ0LjYzM0MxMDguNTEgMjQ4Ljc5OSAxMTAuMTYzIDI1Mi4wODMgMTE2LjE4OCAyNTIuMDgzQzEyOS4zNDQgMjUyLjA4MyAxNDIuMTM4IDI1MS4wMTggMTU0LjQ0MSAyNDkuMDA0QzE1OS41NzEgMjQ4LjE3MSAxNjMuNzc5IDI0NC40OSAxNjUuMzU3IDIzOS41MzNDMTY4LjM2MiAyMzAuMDYyIDE3MC45OTIgMjE5LjcwMyAxNzMuMTg1IDIwOC42MzRDMTc0LjA4IDIwNC4xIDE3My4wODkgMTk5LjY2OSAxNjUuNjc4IDIwMC42NDVDMTU2LjU5OSAyMDEuODQgMTQ2Ljk2MSAyMDIuNzIxIDEzNy41ODIgMjAzLjIzM1oiIGZpbGw9IiNGNTRCMUUiLz4NCjwvc3ZnPg0K" alt="Yanolja Logo" style="height: 36px; margin-bottom: 16px;">
+        <div style="font-size:2.4em; border-left: 8px solid #FF4F6E; padding-left: 16px; color: #333; line-height: 1.2; font-weight: bold;">
+            Byweekly Finance Briefing
+        </div>
+    </div>
+    <div style="font-size: 0.95em; color: #555; text-align: right; min-width: 120px; margin-bottom: 6px; font-family: Georgia, serif;">
+        July 19, 2025
+    </div>
 </div>
 
-<h2 onclick="toggleContent('c3')">3. 삼일 PwC 보고서: 내부회계 장애 1순위는 경영진 지원 부족</h2>
-<div class="content" id="c3">
-  삼일 PwC가 최근 상장사 295곳을 대상으로 내부회계관리제도 운영 실태를 설문 조사.<br>
-  운영 애로사항으로 경영진 지원 및 관심 부족이 48.4%로 1위, 이어서 재무/공시/IT통제 미비(29.8%), 감사위원회 전문성 부족(13.9%).<br>
-  경영진이 내부통제를 ‘회계팀·감사팀의 일’로 치부하거나, 조직 차원의 투자/관심을 하지 않는 것이 근본적 장애라고 분석.<br>
-  또한 감사위원회가 제대로 교육받지 못하고, 재무적 전문성이 부족해 경영진에 적절한 견제 역할을 못하는 것도 문제로 지목.<br>
-  ➔ 삼일은 “경영진과 감사위원회의 톱다운(Top-down) 통제가 작동해야 내부통제 문화가 정착된다”고 강조.<br>
-  <a href="https://taxtimes.co.kr/news/article.html?no=265075&utm_source=chatgpt.com" target="_blank">출처 보기</a>
-</div>
+    
 
-<h2 onclick="toggleContent('c4')">4. 딜로이트: 외부 감사 의견과 내부 감사 간 괴리율 88.4%</h2>
-<div class="content" id="c4">
-  한국 딜로이트 그룹이 FY2024 상장사 데이터를 분석해 발표한 자료에 따르면,<br>
-  외부 감사에서 ‘비적정 의견(한정·의견거절·부적정)’을 받은 회사 86개 중,<br>
-  무려 88.4%가 내부 감사위원회(자체평가)에서는 ‘적정’으로 판단했다고 지적.<br>
-  비적정 사유는 경영진 관련(대표이사 횡령·보증 등), 감사범위 제한(자료 미제출), 회계팀 전문성 부족이 상위권.<br>
-  즉 내부 감사위원회가 경영진 눈치를 보거나 전문성 부족으로 문제를 제대로 못 짚었다는 해석이 가능.<br>
-  ➔ 향후 소송, 제재 시 내부 감사위원회도 책임을 피하기 어렵게 될 가능성이 높음.<br>
-  <a href="https://www.deloitte.com/kr/ko/about/press-room/press-2025-06-16.html" target="_blank">출처 보기</a>
+<div class="tab">
+<button class="tablinks" onclick="openTab(event, 'GAAP')">GAAP</button>
+<button class="tablinks" onclick="openTab(event, 'GAAS')">GAAS</button>
+<button class="tablinks" onclick="openTab(event, 'Tax')">Tax</button>
+<button class="tablinks" onclick="openTab(event, 'D&C')">D&C</button>
+<button class="tablinks" onclick="openTab(event, 'YIFRS')">YIFRS</button>
+<button class="tablinks" onclick="openTab(event, 'Notice')">Notice</button>
 </div>
+<div id="GAAP" class="tabcontent">
+<h2>GAAP</h2>
 
-<h2 onclick="toggleContent('c5')">5. 금감원, 보험사 GA(대리점) 내부통제 집중 점검</h2>
-<div class="content" id="c5">
-  금감원이 43개 보험사 감사책임자 80명을 소집해 워크숍을 열고 GA(법인대리점) 판매채널 리스크를 중점적으로 점검.<br>
-  GA는 보험사 상품을 대신 판매하면서 리베이트·편법 설계·불완전판매가 발생하기 쉬운 구조.<br>
-  금감원은 “내부통제가 대리점 단계에서 제대로 작동하지 않아 반복적 소비자 피해가 발생한다”고 지적.<br>
-  이번 워크숍에서 보험사별로 GA 내부통제 상황을 보고받고, 상품 기획~판매 전 과정 리스크 매트릭스를 정비하도록 요구.<br>
-  ➔ 향후 대리점 관리 체계가 취약한 보험사에 대해 검사를 예고, 업계 긴장감 고조.<br>
-  <a href="https://www.yool-hyun.com/menu2/menu2_view.htm?newsid=546859&utm_source=chatgpt.com" target="_blank">출처 보기</a>
-</div>
+        <button class="accordion">K‑IFRS 개정(2025), 기업이 꼭 알아야 할 변화는?</button>
+        <div class="brief">2025년부터 중견 및 비상장 대기업을 대상으로 K-IFRS 개정안이 본격적으로 적용됩니다.</div>
+        
+            <div class="panel">
+                <p>2025년부터 중견 및 비상장 대기업을 대상으로 K-IFRS 개정안이 본격적으로 적용됩니다. 이번 개정은 회계정보의 국제적 비교 가능성과 신뢰성 강화를 목표로 하며, 연결 재무제표 기준의 확대와 성과측정치(MPM) 공시가 의무화될 예정입니다. 특히 매출 및 영업이익 산정 기준의 명확화, 내부통제 연계 강화가 포함됩니다. 기업은 이에 따라 기존 시스템을 점검하고, 외부감사 대응 방안도 재정비할 필요가 있습니다. 회계기준원의 해설 자료와 가이드라인을 숙지하는 것이 권장됩니다.</p>
+                <a href="https://finance.newploy.net/k-ifrs-%EA%B0%9C%EC%A0%95-2025/?utm_source=chatgpt.com" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">IFRS 18 도입 연착륙 방안</button>
+        <div class="brief">금융당국은 IFRS 18 회계기준 도입과 관련해 단계적 적용과 실무지침 마련을 통해 연착륙을 유도하겠다고 밝혔습니다. 기업은 시스템 개선과 내부통제 정비가 필요합니다.</div>
+        
+            <div class="panel">
+                <a href="https://www.fsc.go.kr/po010101/82451" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">회계기준원, 2025년 제정 사업 발표</button>
+        <div class="brief">회계기준원은 2025년 사업계획을 통해 새로운 회계기준 제정과 해석 사업 방향을 제시했습니다.</div>
+        
+            <div class="panel">
+                <p>회계기준원은 2025년 사업계획을 통해 새로운 회계기준 제정과 해석 사업 방향을 제시했습니다. 이에는 중소기업 회계기준 개정, 업종별 회계 해석서 개발, 그리고 ESG 및 지속가능성 공시기준 도입 준비 등이 포함됩니다. 특히 글로벌 IFRS 및 ISSB 기준과의 정합성을 높이기 위해 디지털 재무공시 도구와 시스템 정비가 병행될 예정입니다. 이는 중견기업뿐만 아니라 공공기관 회계투명성 강화에도 영향을 미칠 것으로 보입니다. 기업들은 이에 대비해 실무 체계를 정비하고, 회계인력 역량 강화에 나서야 합니다.</p>
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">IFRS17 자본기준 개정 예정</button>
+        <div class="brief">금융위원회는 IFRS17 및 K-ICS 개편을 통해 보험업권의 자본건전성 강화를 추진 중입니다.</div>
+        
+            <div class="panel">
+                <p>금융위원회는 IFRS17 및 K-ICS 개편을 통해 보험업권의 자본건전성 강화를 추진 중입니다. 기본자본 요건의 명확화, 지급여력 산식의 정교화, 책임준비금 적정성 평가 항목 보완이 주요 개정 사항입니다. 보험사는 새로운 산식에 따라 예상 지급여력비율 변동성과 손익계산서 영향도를 분석해야 하며, 회계 시스템 및 내부통제 항목 개선도 병행되어야 합니다. 관련 시행령과 세부지침은 하반기 중 추가 고시 예정입니다.</p>
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            </div>
+<div id="GAAS" class="tabcontent">
+<h2>GAAS</h2>
 
-<h2 onclick="toggleContent('c6')">6. 딜로이트 세미나: 감사위원회 역할과 자금사고 방지 전략</h2>
-<div class="content" id="c6">
-  딜로이트가 개최한 ‘2025 기업지배구조의 미래’ 세미나에서,<br>
-  국내외 감사위원회(AC, Audit Committee) 선진 사례와 내부회계관리제도 고도화 전략, 자금부정 방지 사례를 발표.<br>
-  AI 및 디지털 감사툴을 활용해 자금 흐름을 실시간으로 분석하고 이상 거래를 조기 포착하는 사례도 공유.<br>
-  특히 감사위원회가 경영진의 의사결정에 적극 개입해 자금부정을 예방한 케이스 스터디를 다수 제시.<br>
-  ➔ ESG, 사이버 리스크, AI 규제 등 감사위원회 의제가 다변화하는 만큼 전문성 향상이 필수라는 점을 강조.<br>
-  <a href="https://www.deloitte.com/kr/ko/services/firmwide-integrated-services/perspectives/ccg-seminar-2025-may.html" target="_blank">출처 보기</a>
-</div>
+        <button class="accordion">2024 하반기 회계감리 지적사례 14건 공개</button>
+        <div class="brief">금융감독원은 2024년 하반기 회계감리 결과를 통해 총 14건의 위반사례를 지적했습니다.</div>
+        
+            <div class="panel">
+                <p>금융감독원은 2024년 하반기 회계감리 결과를 통해 총 14건의 위반사례를 지적했습니다. 위반 유형에는 매출 과대계상, 부채 과소계상, 파생상품 및 충당부채 오류 등이 포함되며, 실질과 형식을 일치시키지 못한 사례가 다수 존재했습니다. 반복적으로 지적되는 이연법인세 및 연결회계 오류는 기업의 구조적 통제 미비를 시사합니다. 금감원은 사전 공시 가이던스를 배포하고, 유사 사례 재발 방지를 위한 교육도 병행 중입니다.</p>
+                <a href="https://files-scs.pstatic.net/2025/06/02/uGOSubfHsl/.../보도자료.pdf?utm_source=chatgpt.com" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">스타트업 회계감사 준비 팁</button>
+        <div class="brief">처음 외부감사를 받는 스타트업을 위해 회계자료 정비, 계정 분개 정확성 확보, 감사인 커뮤니케이션 방법 등을 실무 중심으로 제시한 기고문입니다.</div>
+        
+            <div class="panel">
+                <a href="https://platum.kr/archives/226517" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">비상장회사 재무제표 중점심사 예고</button>
+        <div class="brief">한국공인회계사회는 2025년 비상장기업에 대한 재무제표 중점심사 항목을 사전 공지했습니다.</div>
+        
+            <div class="panel">
+                <p>한국공인회계사회는 2025년 비상장기업에 대한 재무제표 중점심사 항목을 사전 공지했습니다. 주요 심사 항목에는 충당부채, 재고자산 평가, 이연법인세 처리, 해외 매출 회계인식 등이 포함되며, 이는 최근 증가하는 회계오류 및 회계감리 지적사례에 따른 선제 대응 조치입니다. 특히 내부회계관리제도 미비, 연결기준 미적용 등의 사례가 증가함에 따라 회계법인과 감사인은 기업의 회계 및 문서화 절차를 더욱 엄격히 점검해야 할 필요가 있습니다. 해당 심사 기준은 중소기업에도 단계적으로 적용될 수 있어 대응이 요구됩니다.</p>
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">표준감사시간 개정안 공고</button>
+        <div class="brief">감사인의 실질적 업무시간을 보장하고 감사 품질을 제고하기 위해 표준감사시간 개정안이 발표되었습니다.</div>
+        
+            <div class="panel">
+                <p>감사인의 실질적 업무시간을 보장하고 감사 품질을 제고하기 위해 표준감사시간 개정안이 발표되었습니다. 이번 개정은 자산 2천억 원 이상 비상장법인과 내부회계관리제도 적용 기업에 대한 감사시간 기준을 강화합니다. 기업과 감사인은 이를 기반으로 감사계약 체결 시 감사 시간 및 보수 조정을 명확히 할 필요가 있으며, 회계오류를 방지하기 위한 감사 절차 강화가 기대됩니다.</p>
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">회계감사 지배구조 우수기업 인센티브 도입</button>
+        <div class="brief">금융위원회는 회계 및 감사의 투명성을 제고하기 위한 일환으로, 회계감사 지배구조가 우수한 기업을 대상으로 한 인센티브 제도를 도입합니다.</div>
+        
+            <div class="panel">
+                <p>금융위원회는 회계 및 감사의 투명성을 제고하기 위한 일환으로, 회계감사 지배구조가 우수한 기업을 대상으로 한 인센티브 제도를 도입합니다. 이 제도는 외부감사인 자율선임 유예, 감사보수 감액 등의 혜택을 제공하며, 내부회계관리제도 성숙도, 감사 커뮤니케이션 투명성, 회계오류 및 수정률 등을 평가 기준으로 삼습니다. 제도는 회계사회의 평가와 금융당국의 검토를 거쳐 시범사업 후 본격 시행될 예정이며, 자율규제 강화와 기업의 회계윤리 개선에 기여할 것으로 예상됩니다.</p>
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">감사보고서 질적 수준 제고방안 논의</button>
+        <div class="brief">감사보고서 신뢰도 향상을 위한 제도적 방안이 논의되었습니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            </div>
+<div id="Tax" class="tabcontent">
+<h2>Tax</h2>
 
-<h2 onclick="toggleContent('c7')">7. PwC·EY 등: AI·디지털 감사 본격 확산</h2>
-<div class="content" id="c7">
-  PwC·EY 보고서에 따르면 K-SOX(내부회계관리제도) 체계가 AI·데이터 분석 중심으로 빠르게 진화 중.<br>
-  예를 들어 SAP/ERP 데이터를 연계해 분개·수금·자금집행 패턴에서 이상 징후를 AI가 자동 탐지.<br>
-  이는 단순 오류를 찾는 차원을 넘어, 직원들의 자금유용 시도나 내부 공모(컨스피러시)도 조기에 잡아내는 단계까지 왔음.<br>
-  내부 감사팀은 AI 대시보드를 통해 ‘리스크 히트맵’을 상시 확인하면서 필요한 곳만 샘플링 감사하는 방식으로 바뀌는 중.<br>
-  ➔ 전통적 ‘연말 표본 감사’에서 ‘365일 상시 모니터링 감사’로 패러다임 전환.<br>
-  <a href="https://www.pwc.com/kr/ko/insights/samil-insight/discovery-of-ksox-excellence-2025.html" target="_blank">출처 보기</a>
-</div>
-</div>
-<h2 onclick="toggleContent('c8')">8. 비상장사 재무제표 점검 4대 회계이슈</h2>
-<div class="content" id="c8">
-  회계사회(한공회)는 2025년 비상장법인의 재무제표 감사와 감리를 대비해 <strong>4대 핵심 회계이슈</strong>를 사전 예고했습니다.<br><br>
-  주요 이슈는 다음과 같습니다:<br>
-  ① <strong>매출채권 대손충당금</strong>: 회수 가능 금액 추정 정확도, 적절성<br>
-  ② <strong>연결재무제표</strong>: 비상장사도 그룹 연결 기준 준수 여부<br>
-  ③ <strong>이연법인세</strong>: 이연자산·부채 인식 기준, 세율과 시점의 타당성<br>
-  ④ <strong>국외매출</strong>: 환율 산정, 수익 인식 기준의 일관성<br><br>
-  이번 발표는 비상장사들이 <strong>위험요소를 미리 점검하고 개선</strong>하도록 유도하기 위한 것입니다.<br>
-  ➔ 감사 준비가 부족한 기업은 이후 감리에서 부적정 판단을 받을 가능성이 높으므로 지금부터 내부 검증 및 정책 정비가 필요합니다.<br>
-  <a href="https://biz.chosun.com/stock/stock_general/2025/06/24/WAFJTIV6IBFRPEVSIXNAP7NF6M/?utm_source=naver&utm_medium=original&utm_campaign=biz" target="_blank">출처 보기</a>
-</div>
-<hr style="margin: 40px 0; border: 2px dashed #ccc;">
-<h1>집중분석: 자금 부정 통제 의무공시 제도의 효과적 대응방안</h1>
-<p><strong>이승영_딜로이트 안진 수석위원</strong><br>
-<em>형식이 아닌 실질적 유효성이 관건</em></p>
+        <button class="accordion">국세청 세법해석·서면질의 제도 안내</button>
+        <div class="brief">납세자가 세법 적용에 대한 유권 해석을 받을 수 있는 공식 채널로서 서면질의 제도를 소개하고 활용법을 안내하는 내용입니다.</div>
+        
+            <div class="panel">
+                <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7823" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">2025년 부가세 신고 주요 해설</button>
+        <div class="brief">2025년 상반기 부가가치세 실무 이슈에 대한 해설이 발표되었습니다. 면세사업자 구분, 전자세금계산서 발행기준 등이 주요 쟁점입니다. 실무 대응에 참고할 수 있습니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">양도소득세 실무서 발간</button>
+        <div class="brief">국세청 직원들이 공동 집필한 양도소득세 실무서가 출간되었습니다. 다주택자 중과, 비과세 요건, 과세이연 사례 등이 포함되어 있습니다. 세무실무자에게 실질적인 도움이 될 자료입니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">국세청, 부당행위계산 부인 해설 사례 발표</button>
+        <div class="brief">국세청은 법인 간 거래에서의 부당행위계산 부인과 관련된 실제 사례를 통해 판단 기준을 제시했습니다. 거래의 실질이 형식보다 우선한다는 점을 강조했습니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            </div>
+<div id="D&C" class="tabcontent">
+<h2>D&C</h2>
 
-<h2 onclick="toggleContent('c1_2')">Ⅰ. 제도 도입 배경 및 주요 내용</h2>
-<div class="content" id="c1_2">
-2023년 12월 금융감독원은 내부회계관리제도 모범규준을 개정, 
-자율규정이던 자금 부정 통제를 법제화했습니다. 
-이에 따라 기업들은 내부회계관리제도 운영실태평가보고서에 자금 통제 활동을 의무 기재해야 하며, 
-2025년 1월 1일 이후 시작되는 사업연도부터 적용됩니다.<br><br>
-상장기업을 포함해 광범위한 기업집단에 적용되며, 
-이는 복잡한 기업구조를 악용한 자금 부정을 방지하기 위한 조치입니다. 
-법제화의 핵심은 형식적 준수가 아닌 **실질적 통제 유효성 확보**에 있습니다.<br>
-최근 대규모 자금 유용·횡령 사건들이 잇따라 발생하면서 
-자금 관리에 대한 엄격한 통제·감독의 필요성이 커졌고, 
-이는 기업 가치 보호와 지배구조 개선, 지속가능한 성장과 직결됩니다.
-</div>
+        <button class="accordion">금융회사 내부통제 책임 명문화…‘책무구조도’ 시범운영</button>
+        <div class="brief">금융위원회는 경영진의 내부통제 책임을 명문화하기 위해 책무구조도 제도를 시범운영합니다. 제도 위반 시 임원 제재가 가능해집니다.</div>
+        
+            <div class="panel">
+                <a href="https://www.fsc.go.kr/no010101/82660?curPage=1&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=&utm_source=chatgpt.com" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">금융권 내부통제 강화 제도 정착 제안</button>
+        <div class="brief">금융권의 내부통제 제도가 형식에 그치지 않도록 실효성을 갖추기 위한 방안이 전문가 기고로 제안되었습니다. 제도 운영주체의 독립성과 책임이 핵심입니다.</div>
+        
+            <div class="panel">
+                <a href="https://www.khan.co.kr/article/202408182037025" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">지배구조법 책무구조도 제도 시행</button>
+        <div class="brief">대표이사 등 경영진에게 내부통제 책임을 명확히 부여하는 책무구조도 제도가 도입되었습니다. 시범운영을 거쳐 제도화 단계에 진입했습니다. 제재와 면책 요건이 병행됩니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">신한투자증권 내부통제위원회 출범</button>
+        <div class="brief">신한투자증권은 업계 최초로 내부통제위원회를 구성하였습니다. 경영진이 직접 내부통제를 주도하는 구조로 책임과 독립성을 강화하려는 조치입니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">COSO 기반 내부통제 사례집 발간</button>
+        <div class="brief">국민권익위원회는 공공 및 금융기관의 내부통제 우수사례를 정리한 사례집을 발간했습니다. COSO 프레임워크 기반의 통제 항목과 모범 사례가 포함되어 있습니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            
+        <button class="accordion">AI 기반 내부통제 시스템 도입 확산</button>
+        <div class="brief">AI 기술을 활용한 내부통제 자동화 시스템이 금융권을 중심으로 확산되고 있습니다. 거래 이상 탐지, 자동 보고서 생성 등 다양한 영역에 적용됩니다.</div>
+        
+            <div class="panel">
+                <a href="#" target="_blank">원문 보기</a>
+            </div>
+            </div>
 
-<h2 onclick="toggleContent('c2_2')">Ⅱ. 기업이 직면한 도전과제</h2>
-<div class="content" id="c2_2">
-기업들은 자금 부정 통제 의무공시 제도 시행에 따라 여러 현실적 도전에 직면합니다.<br><br>
-특히 해외 종속기업은 지리적·언어·문화·법체계 차이로 통제가 더 어렵습니다. 
-종속기업별 상이한 시스템과 본사와의 정보 비대칭, 
-현지 관리자 권한 설정의 어려움 등이 대표적입니다.<br>
-이를 해결하려면 종속기업의 규모·위험도에 맞춘 차별화된 통제전략과 
-그룹 차원의 일관된 자금관리 정책·시스템이 필요합니다.<br><br>
-많은 기업이 규제 요건을 맞추기 위해 자금을 형식적으로만 관리하려 하지만, 
-이는 감사의견 거절, 자금사고, 규제 제재, 신뢰 하락 등 심각한 리스크로 이어질 수 있습니다.
-따라서 장기적 관점에서 **실질적 통제 강화에 투자**해야 지속가능한 성장 기반을 마련할 수 있습니다.
-</div>
 
-<h2 onclick="toggleContent('c3_2')">Ⅲ. 자금사고의 특성과 통제의 중요성</h2>
-<div class="content" id="c3_2">
-자금사고는 일반 회계부정과 다른 고유 특성이 있습니다.<br><br>
-고의적 은폐·공모·표본조사의 한계, 경영진 관여 가능성, 거래 복잡성으로 
-전통적 감사로는 적발이 어렵습니다. 
-또 자금사고는 소액에서 시작해 점차 규모·빈도가 커지며 
-‘깨진 유리창 이론’처럼 방치 시 대규모 횡령이나 분식회계로 발전하기 쉽습니다.<br><br>
-게다가 일회성 사건이 아니라 지속적으로 발생하고, 
-자금 유출을 숨기기 위해 허위 회계처리가 동반되어 
-재무제표 왜곡까지 이어질 수 있습니다.<br>
-따라서 효과적 자금 통제 시스템은 
-부정 기회를 없애고, 강력한 억제력을 주며, 
-투명한 조직문화를 만들어 기업 가치를 지키는 핵심 장치입니다.
-</div>
 
-<h2 onclick="toggleContent('c4_2')">Ⅳ. 주요 자금사고 유형과 대응 전략</h2>
-<div class="content" id="c4_2">
-① <strong>계좌이체형 부정:</strong> 허위 지급요청으로 회사 자금을 횡령자 계좌로 이체. 
-→ 금액별 승인권한, 직무분리, 신규계좌 검증, 이상거래 탐지시스템 구축이 필요.<br><br>
-② <strong>거래처형 부정:</strong> 가상·유령 거래처로 자금 유출. 
-→ 거래처 등록 실사, 경쟁입찰, 데이터 분석, 정기 평가로 예방.<br><br>
-③ <strong>단가조작형 부정:</strong> 고가 매입·저가 판매로 차액 편취. 
-→ 시계열 단가분석, 이전가격 모니터링, 전문적 구매/판매 프로세스 필요.<br><br>
-④ <strong>법인카드 부정사용:</strong> 모든 기업에서 흔히 발생, 공공기관은 사회적 파장 큼. 
-→ 카드 정책 명확화, 특정 업종 제한, 정기 모니터링 체계 필요.
-</div>
 
-<h2 onclick="toggleContent('c5_2')">Ⅴ. 실질적 통제를 위한 체계적 접근</h2>
-<div class="content" id="c5_2">
-첫 단계는 **진단**입니다. 그룹 규모, 현금보유, 지리·시스템 구조, 본사 파견 여부 등을 고려해 
-Risk-based Approach(위험기반 접근)로 고위험 영역을 우선 식별, 자원을 효율 투입.<br>
-(사례: 한 대기업은 30여개 계열사 중 5개만 집중 진단해 그룹 전체 통제 수준을 빠르게 개선)<br><br>
-다음으로 개선활동은 ①거래처 마스터 데이터 관리, 
-②자금 흐름-회계 기록의 통합 및 미대사 추적 강화, 
-③직무분리·프로세스 자동화·예외거래 탐지로 실질적 통제를 확보.<br>
-마지막은 **모니터링** 단계. 데이터 기반 이상징후 탐지, 
-해외 종속기업 특화 모니터링, 외부감사인과 협력으로 통제 유효성을 지속적으로 유지.
-</div>
+<div id="YIFRS" class="tabcontent">
+<h2>YIFRS</h2>
 
-<h2 onclick="toggleContent('c6_2')">Ⅵ. 제도 도입의 기회 활용: 역할별 대응 전략</h2>
-<div class="content" id="c6_2">
-자금담당 임원은 통제 적정성을 주기적으로 검토, 비정상 패턴까지 점검하고 
-경영진·이사회와 소통해 자원을 확보해야 합니다.<br><br>
-내부통제 담당자는 위험 시나리오를 개발, 통제활동 표준화·문서화, 
-종합적 평가체계를 구축하고 통제 미비점 개선 프로세스를 운영.<br><br>
-내부감사부서는 자금 부정 고위험 영역에 중점 감사계획을 세우고, 
-데이터 기반 감사기법을 통해 감사 효율성을 높이며 
-외부감사와 결과를 공유해 모니터링 체계를 개선.
-</div>
+<button class="accordion">합작법인 연결회계 오류 사례: 지분율만으로는 부족</button>
+<div class="brief">A사는 지분 60%를 가진 합작법인을 종속기업으로 처리했으나, 이사회 구성과 의사결정 구조상 공동지배로 판단되어 회계 오류로 지적받았습니다.</div>
 
-<h2 onclick="toggleContent('c7_2')">Ⅶ. 결론: 실질적 유효성을 갖춘 통제 체계</h2>
-<div class="content" id="c7_2">
-자금 부정 통제 의무공시는 단순 규제가 아닌 기업 내부통제 강화의 기회입니다.<br><br>
-자금 통제는 회계, 구매, 판매, 인사 등과 연결되는 전체 내부통제 체계의 일부로 접근해야 하며, 
-디지털 시대에 맞춰 데이터 분석과 첨단기법을 활용해야 합니다.<br><br>
-궁극적으로 실질적 유효성을 갖춘 통제 체계는 
-재무 건전성, 지속가능 성장, 이해관계자 신뢰를 높여 
-장기적으로 기업 가치 향상에 기여합니다.
+<div class="panel">
+  <p>금융감독원은 A사가 합작계약에 따라 지분 60%를 보유했음에도, 실제 경영 의사결정에는 B사의 동의가 필요했던 점을 간과하고 종속기업으로 연결재무제표에 포함한 점을 지적했습니다.</p>
+  <p>이 사건은 IFRS 제10호에 따른 지배력 판단에서 단순 지분율 외에도 계약상 권리, 이사회 구성 및 실질 의사결정 권한을 종합적으로 고려해야 함을 보여줍니다.</p>
+  <p>감독원은 내부 의사결정 절차의 정비와 계약서의 상세 검토가 필요하며, 공정한 연결기준 적용이 이뤄져야 한다고 권고했습니다.</p>
+  <a href="https://www.fsc.go.kr/po010101/74029?curPage=32&srchBeginDt=&srchCtgry=1&srchEndDt=&srchKey=&srchText=&utm_source=chatgpt.com" target="_blank">원문 보기</a>
 </div>
-
-<a href="https://raw.githubusercontent.com/chuzang44/my-files/main/AI%20시대,%20내부통제%20강화와%20자금%20부정%20방지.wav" download>
-  다운로드: AI 시대, 내부통제 강화와 자금 부정 방지.wav
-</a>
+</div>
+<div id="Notice" class="tabcontent">
+  <h2>Notice</h2>
+  <p>다음 업데이트는 2주 후에 게시될 예정입니다. 새로운 회계 및 세무 이슈가 있는 경우 아래 연락처로 제보해 주세요.</p>
+  <p>문의: finance_brief@yourdomain.com</p>
+</div>
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementsByClassName("tablinks")[0].click();
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+});
+</script>
 
 </body>
 </html>
+
+
